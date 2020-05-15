@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>一个前端渣渣的node开发体验 | DripFlows</title>
+    <meta name="description" content="待补充">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.28ef1fef.css" as="style"><link rel="preload" href="/assets/js/app.7355eab2.js" as="script"><link rel="preload" href="/assets/js/2.132a57af.js" as="script"><link rel="preload" href="/assets/js/16.dd06d4f0.js" as="script"><link rel="prefetch" href="/assets/js/10.740b5f64.js"><link rel="prefetch" href="/assets/js/11.78082b06.js"><link rel="prefetch" href="/assets/js/12.96589dd2.js"><link rel="prefetch" href="/assets/js/13.82b7dda1.js"><link rel="prefetch" href="/assets/js/14.6c0337ad.js"><link rel="prefetch" href="/assets/js/15.4580a59e.js"><link rel="prefetch" href="/assets/js/17.7ce49614.js"><link rel="prefetch" href="/assets/js/18.fb2319df.js"><link rel="prefetch" href="/assets/js/19.29154b75.js"><link rel="prefetch" href="/assets/js/20.ba78d04c.js"><link rel="prefetch" href="/assets/js/21.edc9c9c6.js"><link rel="prefetch" href="/assets/js/22.777eaed4.js"><link rel="prefetch" href="/assets/js/23.d05fe0b4.js"><link rel="prefetch" href="/assets/js/24.7ae352e2.js"><link rel="prefetch" href="/assets/js/25.f458ff03.js"><link rel="prefetch" href="/assets/js/26.02148a11.js"><link rel="prefetch" href="/assets/js/27.e92b4339.js"><link rel="prefetch" href="/assets/js/28.316df1f3.js"><link rel="prefetch" href="/assets/js/29.7ca7db8a.js"><link rel="prefetch" href="/assets/js/3.4df34556.js"><link rel="prefetch" href="/assets/js/30.eed17a97.js"><link rel="prefetch" href="/assets/js/31.91dad760.js"><link rel="prefetch" href="/assets/js/32.8d597ba3.js"><link rel="prefetch" href="/assets/js/33.16a09da9.js"><link rel="prefetch" href="/assets/js/34.45c4d2e6.js"><link rel="prefetch" href="/assets/js/4.663fdb84.js"><link rel="prefetch" href="/assets/js/5.ed1cff9d.js"><link rel="prefetch" href="/assets/js/6.a180e42e.js"><link rel="prefetch" href="/assets/js/7.101c3ea0.js"><link rel="prefetch" href="/assets/js/8.38b06e0d.js"><link rel="prefetch" href="/assets/js/9.5d56b8fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.28ef1fef.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">DripFlows</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">🌟博客</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontEnd/" class="nav-link router-link-active">前端</a></li><li class="dropdown-item"><!----> <a href="/backEnd/" class="nav-link">后端</a></li><li class="dropdown-item"><!----> <a href="/tools/" class="nav-link">工具</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">💻项目</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/DripFlows/chrome-helper" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Chrome-helper
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/suggestions/" class="nav-link">📚推荐</a></div><div class="nav-item"><a href="/todo/" class="nav-link">💡Todo</a></div><div class="nav-item"><a href="https://github.com/DripFlows" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">🌟博客</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontEnd/" class="nav-link router-link-active">前端</a></li><li class="dropdown-item"><!----> <a href="/backEnd/" class="nav-link">后端</a></li><li class="dropdown-item"><!----> <a href="/tools/" class="nav-link">工具</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">💻项目</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/DripFlows/chrome-helper" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Chrome-helper
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/suggestions/" class="nav-link">📚推荐</a></div><div class="nav-item"><a href="/todo/" class="nav-link">💡Todo</a></div><div class="nav-item"><a href="https://github.com/DripFlows" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/frontEnd/" class="sidebar-link">欢迎</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>TypeScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Node</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontEnd/node/node-primer.html" class="active sidebar-link">一个前端渣渣的node开发体验</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#技术栈简述" class="sidebar-link">技术栈简述</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#为什么要用node" class="sidebar-link">为什么要用node</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#koa" class="sidebar-link">Koa</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#typescript" class="sidebar-link">Typescript</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#mysql" class="sidebar-link">Mysql</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#mongodb" class="sidebar-link">Mongodb</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#pm2" class="sidebar-link">PM2</a></li></ul></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#项目搭建" class="sidebar-link">项目搭建</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#创建一个koa应用" class="sidebar-link">创建一个koa应用</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#本地开发环境" class="sidebar-link">本地开发环境</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#引入接口路由" class="sidebar-link">引入接口路由</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#定义数据库模型" class="sidebar-link">定义数据库模型</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#实现接口" class="sidebar-link">实现接口</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#jwt身份验证" class="sidebar-link">jwt身份验证</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#接口文档" class="sidebar-link">接口文档</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#mock数据" class="sidebar-link">Mock数据</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#日志" class="sidebar-link">日志</a></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#部署" class="sidebar-link">部署</a></li></ul></li><li class="sidebar-sub-header"><a href="/frontEnd/node/node-primer.html#结束语" class="sidebar-link">结束语</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>杂类</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="一个前端渣渣的node开发体验"><a href="#一个前端渣渣的node开发体验" aria-hidden="true" class="header-anchor">#</a> 一个前端渣渣的node开发体验</h1> <h2 id="前言"><a href="#前言" aria-hidden="true" class="header-anchor">#</a> 前言</h2> <p>​		因为最近打算自己搭建一个自己的博客系统，用来记录日常的学习和提升一下写作水平，所以能就打算自己搭建一下前后端项目。在网上找了下，也没有找到合适（现成）的项目，所以就打算自己动手来搭建一下。这篇文章主要描述如何搭建一个node的API接口服务。</p> <h2 id="技术栈简述"><a href="#技术栈简述" aria-hidden="true" class="header-anchor">#</a> 技术栈简述</h2> <p>网上的node框架也挺多的，用的较多的有egg，express，koa等框架，框架间各有利弊，最后均衡下来，还是决定使用可拓展性比较强的koa2来搭建项目，加上最近在学习typescript，最后决定使用的技术栈就是 koa+typescript+mysql+mongodb来搭建项目。</p> <h3 id="为什么要用node"><a href="#为什么要用node" aria-hidden="true" class="header-anchor">#</a> 为什么要用node</h3> <p>最主要的一点是其他语言咱也不会啊。。。</p> <img src="http://www.rsdown.cn/d/file/p/2017-04-03/024f9cb50d32b645dd7fef8be68acbf3.jpg" alt="无奈表情包" style="zoom:75%;"> <p>言归正传，Node.js是一个运行在服务端的框架，它底层使用的是V8引擎，它的速度非常快，并且作为一个前端的后端服务语言，还有其他吸引人的地方：</p> <ol><li><p>异步I/O</p> <p>因为node都是I/O都是异步的，所以能很好的处理高并发场景</p></li> <li><p>事件驱动</p></li> <li><p>单线程</p></li> <li><p>跨平台</p></li></ol> <p>而且，最最最最重要的一点就是，node是由JavaScript开发的，极大的降低了前端同学的学习成本。</p> <h3 id="koa"><a href="#koa" aria-hidden="true" class="header-anchor">#</a> Koa</h3> <p>​		koa是Express的原班人马打造的一个新的框架。相对于express来说koa更小，更有表现力更加健壮。当然，前面说的都是虚的，其实真正吸引我的是koa通过es6的写法，利用async函数，解决了express.js中地狱回调的问题，并且koa不像express一样自带那么多中间件，对于一个私有项目来说，无疑是极好的，还有一个特点就是koa独特的中间件流程控制，也就是大家津津乐道的koa洋葱模型。</p> <p>关于洋葱模型，大概归纳起来就是两点</p> <ol><li>context的保存和传递</li> <li>中间件的管理和next的实现</li></ol> <p><img src="https://segmentfault.com/img/bV6DZG?w=478&amp;h=435" alt="clipboard.png"></p> <p>​																（图片来源于网络）</p> <p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9NcHQ4NkVHamxwdTFsMXVDaWJsV3p4dmd1R3loUHp4V3k4REtKOGE3aWF1VVR6WG03QjduYllrNVJTNmFpYUdrbHN2MFZRQW5xOEd2R0F6OTFMelBXUk5hUS82NDA?x-oss-process=image/format,png" alt="img"></p> <p>上面两张图很清晰的展示了洋葱模型的工作流程，当然，具体的原理实现的话与本篇无关，就不在深入描述了，有兴趣的同学可以自己到网上搜一下哈。</p> <h3 id="typescript"><a href="#typescript" aria-hidden="true" class="header-anchor">#</a> Typescript</h3> <p>网上特别多关于“为什么要用Typescript开发”，“Typescript开发的好处和坏处”，“为什么不用Typescript开发”等等的争论和文章，有兴趣的同学也可以去说道说道哈。</p> <p>本次项目用ts主要是出于以下几点考虑：</p> <ul><li>本人在持续的学习ts中，“纸上得来终觉浅，绝知此事要躬行”，需要更多的ts实战才能加深对ts的了解</li> <li>自己的项目，想用什么就用什么</li> <li>写起来逼格会相对高一些</li> <li>Ts有诸多js中没有的东西，譬如泛型接口抽象等等</li> <li>良好的模块管理</li> <li>强类型语音,个人感觉比js开发服务端项目更合适</li> <li>有良好的错误提示机制,可以避免很多开发阶段的低级错误</li> <li>约束开发习惯，使得代码更优雅规范</li></ul> <p>最后记住一点，适合自己的才是最好的</p> <h3 id="mysql"><a href="#mysql" aria-hidden="true" class="header-anchor">#</a> Mysql</h3> <p>MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一</p> <h3 id="mongodb"><a href="#mongodb" aria-hidden="true" class="header-anchor">#</a> Mongodb</h3> <p>为什么用了mysql还要用mongodb呢？其实主要是因为使用的是jwt来做一个身份认证，由于用到中间件没有提供刷新过期时间的API，而又想要实现一个自动续命的功能，所以使用mongodb来辅助完成自动续命的功能。并且，一些用户身份信息或埋点信息可以存在mongo中</p> <h3 id="pm2"><a href="#pm2" aria-hidden="true" class="header-anchor">#</a> PM2</h3> <p>PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单</p> <h2 id="项目搭建"><a href="#项目搭建" aria-hidden="true" class="header-anchor">#</a> 项目搭建</h2> <p>我主要把项目分为：框架，日志，配置，路由，请求逻辑处理，数据模型化这几个模块</p> <p>以下是一个项目的目录结构：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>  ├── app                         编译后项目文件
+  ├── node_modules                依赖包
+  ├── static                      静态资源文件
+  ├── logs                      	服务日志
+  ├── src                         源码
+  │   ├── abstract                    抽象类
+  │   ├── config                      配置项
+  │   ├── controller                  控制器
+  │   ├── database                    数据库模块
+  │   ├── middleware                  中间件模块
+  │   ├── models                  		数据库表模型
+  │   ├── router                      路由模块 - 接口
+  │   ├── utils                       工具
+  │   ├── app.ts                  koa2入口
+  ├── .eslintrc.js                eslint 配置
+  ├── .gitignore                  忽略提交到git目录文件
+  ├── .prettierrc                 代码美化
+  ├── ecosystem.config.js         pm2 配置
+  ├── nodemon.json                nodemon 配置
+  ├── package.json                依赖包及配置信息文件
+  ├── tsconfig.json               typescript 配置
+  ├── README.md                   描述文件
+</code></pre></div><p>话不多说，接下来跟着代码来看项目</p> <h3 id="创建一个koa应用"><a href="#创建一个koa应用" aria-hidden="true" class="header-anchor">#</a> 创建一个koa应用</h3> <p>俗话说的好：人无头不走。项目中也会有个牵着项目走的头，这就是入口app.ts，接下来咱就结合代码看看它是怎么做这个头的</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Koa<span class="token punctuation">,</span> <span class="token punctuation">{</span> ParameterizedContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'koa'</span>
+<span class="token keyword">import</span> logger <span class="token keyword">from</span> <span class="token string">'koa-logger'</span>
+<span class="token comment">// 实例化koa</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">logger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 答应一下响应信息</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> start <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> timer<span class="token punctuation">:</span> number
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    timer <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> ms <span class="token operator">=</span> timer <span class="token operator">-</span> start
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">method: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ctx<span class="token punctuation">.</span>method<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, url:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ctx<span class="token punctuation">.</span>url<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ms<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">ms</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    timer <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> ms <span class="token operator">=</span> timer <span class="token operator">-</span> start
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">method: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ctx<span class="token punctuation">.</span>method<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, url:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ctx<span class="token punctuation">.</span>url<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ms<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">ms</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 监听端口并启动</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span><span class="token constant">PORT</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Server running on http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>config<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">3000</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">:</span> Error<span class="token punctuation">,</span> ctx<span class="token punctuation">:</span> ParameterizedContext</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 项目启动错误</span>
+  ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> error<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> app
+</code></pre></div><p>到了这一步，我们就已经可以启动一个简单的项目了</p> <ol><li><code>npm run tsc</code> 编译ts文件</li> <li><code>node app.js</code> 启动项目</li></ol> <p>接下来在浏览器输入http://localhost:3000就能在控制台看到访问日志了。当然，做到这一步还是不够的，因为我们开发过程中总是伴随着调试，所以需要更方便的开发环境。</p> <h3 id="本地开发环境"><a href="#本地开发环境" aria-hidden="true" class="header-anchor">#</a> 本地开发环境</h3> <p>本地开发使用nodemon来实现自动重启，因为node不能直接识别ts，所以需要用ts-node来运行ts文件。</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token comment">// nodemon.json</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;ext&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ts&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;watch&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token comment">// 需要监听变化的文件</span>
+    <span class="token string">&quot;src/**/*.ts&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;config/**/*.ts&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;router/**/*.ts&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;public/**/*&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;view/**/*&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;exec&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ts-node --project tsconfig.json src/app.ts&quot;</span> <span class="token comment">// 使用ts-node来执行ts文件</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// package.json</span>
+<span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cross-env NODE_ENV=development nodemon -x&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="本地调试"><a href="#本地调试" aria-hidden="true" class="header-anchor">#</a> 本地调试</h4> <p>因为有的时候需要看到请求的信息，那我们又不能在代码中添加<code>console.log(日志)</code>这样效率低又不方便，所以我们需要借助编辑器来帮我们实现debug的功能。这边简单描述一下怎么用vscode来实现debug的。</p> <ul><li><em><strong>tsconfig.json中开启sourceMap</strong></em></li> <li>为ts-node注册一个vsc的debug任务，修改项目的launch.json文件，添加一个新的启动方式</li> <li>launch.json</li></ul> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Current TS File&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;node&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;request&quot;</span><span class="token operator">:</span> <span class="token string">&quot;launch&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;args&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;${workspaceRoot}/src/app.ts&quot;</span> <span class="token comment">// 入口文件</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;runtimeArgs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;--nolazy&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;-r&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;ts-node/register&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;sourceMaps&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;cwd&quot;</span><span class="token operator">:</span> <span class="token string">&quot;${workspaceRoot}&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;protocol&quot;</span><span class="token operator">:</span> <span class="token string">&quot;inspector&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;console&quot;</span><span class="token operator">:</span> <span class="token string">&quot;integratedTerminal&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;internalConsoleOptions&quot;</span><span class="token operator">:</span> <span class="token string">&quot;neverOpen&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>F9 代码中断点</li> <li>F5 开始调试代码</li></ul> <h3 id="引入接口路由"><a href="#引入接口路由" aria-hidden="true" class="header-anchor">#</a> 引入接口路由</h3> <p>上面我们已经创建了一个koa应用了，接下来就使用需要引入路由了：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// app.ts</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span>
+<span class="token keyword">import</span> requestMiddleware <span class="token keyword">from</span> <span class="token string">'./middleware/request'</span>
+app
+  <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>requestMiddleware<span class="token punctuation">)</span> <span class="token comment">// 使用路由中间件处理路由，一些处理接口的公用方法</span>
+  <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">allowedMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// router/index.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ParameterizedContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'koa'</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'koa-router'</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 接口文档 - 这边使用分模块实现路由的方式</span>
+router<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>路由模块<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">...</span>
+router<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>路由模块<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 测试路由连接</span>
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/test-connect'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">:</span> ParameterizedContext</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token string">'Hello Frivolous'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 匹配其他未定义路由</span>
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'*'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">:</span> ParameterizedContext</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> ctx<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre></div><h3 id="定义数据库模型"><a href="#定义数据库模型" aria-hidden="true" class="header-anchor">#</a> 定义数据库模型</h3> <ol><li>使用sequlize作为mysql的中间件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 实例化sequelize</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Sequelize <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'sequelize'</span>
+<span class="token keyword">const</span> sequelizeManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sequelize</span><span class="token punctuation">(</span>db<span class="token punctuation">,</span> user<span class="token punctuation">,</span> pwd<span class="token punctuation">,</span> Utils<span class="token punctuation">.</span><span class="token function">mergeDefaults</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    dialect<span class="token punctuation">:</span> <span class="token string">'mysql'</span><span class="token punctuation">,</span>
+    host<span class="token punctuation">:</span> host<span class="token punctuation">,</span>
+    port<span class="token punctuation">:</span> port<span class="token punctuation">,</span>
+    define<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      underscored<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      charset<span class="token punctuation">:</span> <span class="token string">'utf8'</span><span class="token punctuation">,</span>
+      collate<span class="token punctuation">:</span> <span class="token string">'utf8_general_ci'</span><span class="token punctuation">,</span>
+      freezeTableName<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      timestamps<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    logging<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定义表结构</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Model<span class="token punctuation">,</span> ModelAttributes<span class="token punctuation">,</span> DataTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'sequelize'</span>
+<span class="token comment">// 定义用户表模型中的字段属性</span>
+<span class="token keyword">const</span> UserModel<span class="token punctuation">:</span> ModelAttributes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  id<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    unique<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    comment<span class="token punctuation">:</span> <span class="token string">'id'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  avatar<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  nick_name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  email<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  mobile<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  gender<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  password<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定义表模型</span>
+sequelizeManager<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span>modelName<span class="token punctuation">,</span> UserModel<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  freezeTableName<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// model对应的表名将与model名相同</span>
+  tableName<span class="token punctuation">:</span> modelName<span class="token punctuation">,</span>
+  timestamps<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  underscored<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  paranoid<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  charset<span class="token punctuation">:</span> <span class="token string">&quot;utf8&quot;</span><span class="token punctuation">,</span>
+  collate<span class="token punctuation">:</span> <span class="token string">&quot;utf8_general_ci&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>根据上面的代码，我们就已经定义好一个user表了，其他表也可以按照这个来定义。不过这个项目除了使用mysql，也还有用到mongo，接下来看看mongodb怎么用</p> <ol start="2"><li>使用mongoose作为mongodb的中间件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// mongoose入口</span>
+<span class="token keyword">import</span> mongoose <span class="token keyword">from</span> <span class="token string">'mongoose'</span>
+<span class="token keyword">const</span> uri <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">mongodb://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">DB</span><span class="token punctuation">.</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">DB</span><span class="token punctuation">.</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+mongoose<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">'mongodb://'</span> <span class="token operator">+</span> <span class="token constant">DB_STR</span><span class="token punctuation">)</span>
+mongoose<span class="token punctuation">.</span>connection<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'connected'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Mongoose connection success'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+mongoose<span class="token punctuation">.</span>connection<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">:</span> Error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Mongoose connection error: '</span> <span class="token operator">+</span> err<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+mongoose<span class="token punctuation">.</span>connection<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'disconnected'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Mongoose connection disconnected'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> mongoose
+
+<span class="token comment">// 定义表模型</span>
+<span class="token keyword">import</span> mongoose <span class="token keyword">from</span> <span class="token string">'../database/mongoose'</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> Schema <span class="token punctuation">}</span> <span class="token operator">=</span> mongoose
+<span class="token keyword">const</span> AccSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  strict<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 允许传入未定义字段</span>
+  timestamps<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 默认会带上createTime/updateTime</span>
+  versionKey<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token comment">// 默认不带版本号</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> AccSchema
+
+<span class="token comment">// 定义模型</span>
+mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">'AccLog'</span><span class="token punctuation">,</span> AccSchema<span class="token punctuation">)</span>
+</code></pre></div><h3 id="实现接口"><a href="#实现接口" aria-hidden="true" class="header-anchor">#</a> 实现接口</h3> <p>好了，上面我们已经定义好表模型了，接下来就是激动人心的接口实现了。我们通过一个简单的埋点接口来实现一下，首先需要分析埋点工具实现的逻辑：</p> <ol><li>因为埋点信息都是非关系型的，所以使用mongodb来存储埋点信息</li> <li>因为这个就是一个单纯的记录接口，所以需要设计的比较通用 - 即除了关键几个字段，调用方传什么就保存什么</li> <li>埋点行为对用户来说是无感知的，所以不设计反馈信息，如果埋点出错也是由内部处理</li></ol> <p>好了，了解这个埋点的功能之后，就开始来实现这个简单的接口了：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// route.ts 定义一个addAccLog的接口</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/addAccLog'</span><span class="token punctuation">,</span> AccLogController<span class="token punctuation">.</span>addAccLog<span class="token punctuation">)</span>
+<span class="token comment">// AccLogController.ts 实现addAccLog接口</span>
+<span class="token keyword">class</span> <span class="token class-name">AccLogRoute</span> <span class="token keyword">extends</span> <span class="token class-name">RequestControllerAbstract</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// AccLogController.ts</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">addAccLog</span><span class="token punctuation">(</span>ctx<span class="token punctuation">:</span> ParameterizedContext<span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<span class="token operator">&lt;</span><span class="token keyword">void</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> data <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body
+      <span class="token keyword">const</span> store <span class="token operator">=</span> Mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span>tableName<span class="token punctuation">,</span> AccSchema<span class="token punctuation">,</span> tableName<span class="token punctuation">)</span>
+      <span class="token comment">// disposeAccInsertData 方法用来处理日志信息，有些字段嵌套太要扁平化深或者去除空值冗余字段</span>
+      <span class="token keyword">const</span> info <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">disposeAccInsertData</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>logInfo<span class="token punctuation">)</span>
+      <span class="token comment">// 添加日志</span>
+      <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> store<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>info<span class="token punctuation">)</span>
+      <span class="token comment">// 不需要反馈</span>
+      <span class="token comment">// super.handleResponse('success', ctx, res)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 错误处理 - 比如说打个点，记录埋点出错的信息，看看是什么原因导致出错的（根据实际的需求来做）</span>
+      <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">AccLogRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>说到这边，不得不提一句哈，就是路由可以引入装饰器写法，这样能减少重复工作和提高效率，有兴趣的同学可以看我上一篇博客哈。这边贴一下装饰器写法的代码：</p> <div class="language-js extra-class"><pre class="language-js"><code>@<span class="token function">Controller</span><span class="token punctuation">(</span><span class="token string">'/AccLogController'</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">AccLogRoute</span> <span class="token punctuation">{</span>
+  @<span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/addAccLog'</span><span class="token punctuation">)</span>
+  @<span class="token function">RequestBody</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> 
+  <span class="token keyword">async</span> <span class="token function">addAccLog</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">:</span> ParameterizedContext<span class="token punctuation">,</span> next<span class="token punctuation">:</span> Function</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> store<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>info<span class="token punctuation">)</span>
+    <span class="token function">handleResponse</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">,</span> ctx<span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这一对比，是不是看出装饰器的好处了呢。</p> <h3 id="jwt身份验证"><a href="#jwt身份验证" aria-hidden="true" class="header-anchor">#</a> jwt身份验证</h3> <p>这边使用jsonwebtoken来做jwt校验</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> sign<span class="token punctuation">,</span> decode<span class="token punctuation">,</span> verify <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'jsonwebtoken'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ParameterizedContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'koa'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> sign<span class="token punctuation">,</span> decode<span class="token punctuation">,</span> verify <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'jsonwebtoken'</span>
+<span class="token keyword">import</span> uuid <span class="token keyword">from</span> <span class="token string">'node-uuid'</span>
+
+<span class="token keyword">import</span> IController <span class="token keyword">from</span> <span class="token string">'../interface/controller'</span>
+<span class="token keyword">import</span> config <span class="token keyword">from</span> <span class="token string">'../config'</span>
+<span class="token keyword">import</span> rsaUtil <span class="token keyword">from</span> <span class="token string">'../util/rsaUtil'</span>
+<span class="token keyword">import</span> cacheUtil <span class="token keyword">from</span> <span class="token string">'../util/cacheUtil'</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">ICode</span> <span class="token punctuation">{</span>
+  success<span class="token punctuation">:</span> string<span class="token punctuation">,</span>
+  unknown<span class="token punctuation">:</span> string<span class="token punctuation">,</span>
+  error<span class="token punctuation">:</span> string<span class="token punctuation">,</span>
+  authorization<span class="token punctuation">:</span> string<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">IPayload</span> <span class="token punctuation">{</span>
+  iss<span class="token punctuation">:</span> number <span class="token operator">|</span> string<span class="token punctuation">;</span> <span class="token comment">// 用户id</span>
+  login_id<span class="token punctuation">:</span> number <span class="token operator">|</span> string<span class="token punctuation">;</span> <span class="token comment">// 登录日志id</span>
+  sub<span class="token operator">?</span><span class="token punctuation">:</span> string<span class="token punctuation">;</span>
+  aud<span class="token operator">?</span><span class="token punctuation">:</span> string<span class="token punctuation">;</span>
+  nbf<span class="token operator">?</span><span class="token punctuation">:</span> string<span class="token punctuation">;</span>
+  jti<span class="token operator">?</span><span class="token punctuation">:</span> string<span class="token punctuation">;</span>
+  <span class="token punctuation">[</span>key<span class="token punctuation">:</span> string<span class="token punctuation">]</span><span class="token punctuation">:</span> any<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+abstract <span class="token keyword">class</span> <span class="token class-name">AController</span> <span class="token keyword">implements</span> <span class="token class-name">IController</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 服务器响应状态</span>
+  <span class="token comment">// code 状态码参考 https://www.cnblogs.com/zqsb/p/11212362.html</span>
+  <span class="token keyword">static</span> <span class="token constant">STATE</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    success<span class="token punctuation">:</span> <span class="token punctuation">{</span> code<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'操作成功！'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    unknown<span class="token punctuation">:</span> <span class="token punctuation">{</span> code<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'未知错误！'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    error<span class="token punctuation">:</span> <span class="token punctuation">{</span> code<span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'操作失败！'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    authorization<span class="token punctuation">:</span> <span class="token punctuation">{</span> code<span class="token punctuation">:</span> <span class="token number">401</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'身份认证失败！'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * @description 响应事件
+   * @param {keyof ICode} type
+   * @param {ParameterizedContext} [ctx]
+   * @param {*} [data]
+   * @param {string} [message]
+   * @returns {object}
+   */</span>
+  <span class="token keyword">public</span> <span class="token function">handleResponse</span><span class="token punctuation">(</span>
+    type<span class="token punctuation">:</span> keyof ICode<span class="token punctuation">,</span>
+    ctx<span class="token operator">?</span><span class="token punctuation">:</span> ParameterizedContext<span class="token punctuation">,</span>
+    data<span class="token operator">?</span><span class="token punctuation">:</span> any<span class="token punctuation">,</span>
+    message<span class="token operator">?</span><span class="token punctuation">:</span> string
+  <span class="token punctuation">)</span><span class="token punctuation">:</span> object <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> AController<span class="token punctuation">.</span><span class="token constant">STATE</span><span class="token punctuation">[</span>type<span class="token punctuation">]</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">{</span>
+      message<span class="token punctuation">:</span> message <span class="token operator">||</span> res<span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+      code<span class="token punctuation">:</span> res<span class="token punctuation">.</span>code<span class="token punctuation">,</span>
+      data<span class="token punctuation">:</span> data <span class="token operator">||</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">)</span> ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> result
+    <span class="token keyword">return</span> result
+  <span class="token punctuation">}</span>
+  <span class="token comment">/**
+   * @description 注册token
+   * @param {IPayload} payload
+   * @returns {string}
+   */</span>
+  <span class="token keyword">public</span> <span class="token function">jwtSign</span><span class="token punctuation">(</span>payload<span class="token punctuation">:</span> IPayload<span class="token punctuation">)</span><span class="token punctuation">:</span> string <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">TOKENEXPIRESTIME</span><span class="token punctuation">,</span> <span class="token constant">JWTSECRET</span><span class="token punctuation">,</span> <span class="token constant">RSA_PUBLIC_KEY</span> <span class="token punctuation">}</span> <span class="token operator">=</span> config<span class="token punctuation">.</span><span class="token constant">JWT_CONFIG</span>
+    <span class="token keyword">const</span> noncestr <span class="token operator">=</span> uuid<span class="token punctuation">.</span><span class="token function">v1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> iss <span class="token operator">=</span> payload<span class="token punctuation">.</span>iss
+    <span class="token comment">// jwt创建Token</span>
+    <span class="token keyword">const</span> token <span class="token operator">=</span> <span class="token function">sign</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token operator">...</span>payload<span class="token punctuation">,</span>
+      noncestr
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token constant">JWTSECRET</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> expiresIn<span class="token punctuation">:</span> <span class="token constant">TOKENEXPIRESTIME</span><span class="token punctuation">,</span> algorithm<span class="token punctuation">:</span> <span class="token string">&quot;HS256&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 加密Token</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> rsaUtil<span class="token punctuation">.</span><span class="token function">pubEncrypt</span><span class="token punctuation">(</span><span class="token constant">RSA_PUBLIC_KEY</span><span class="token punctuation">,</span> token<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> isSave <span class="token operator">=</span> cacheUtil<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>iss<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> noncestr<span class="token punctuation">,</span> <span class="token constant">TOKENEXPIRESTIME</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isSave<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Save authorization noncestr error'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/**
+   * @description 验证Token有效性，中间件
+   * 
+   */</span>
+  <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token function">verifyAuthMiddleware</span><span class="token punctuation">(</span>ctx<span class="token punctuation">:</span> ParameterizedContext<span class="token punctuation">,</span> next<span class="token punctuation">:</span> Function<span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<span class="token operator">&lt;</span>any<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 校验token</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">JWTSECRET</span><span class="token punctuation">,</span> <span class="token constant">RSA_PRIVATE_KEY</span><span class="token punctuation">,</span> <span class="token constant">IS_AUTH</span><span class="token punctuation">,</span> <span class="token constant">IS_NONCESTR</span> <span class="token punctuation">}</span> <span class="token operator">=</span> config<span class="token punctuation">.</span><span class="token constant">JWT_CONFIG</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token constant">IS_AUTH</span> <span class="token operator">&amp;&amp;</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'development'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果header中没有身份认证字段，则认为校验失败</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ctx<span class="token punctuation">.</span>header <span class="token operator">||</span> <span class="token operator">!</span>ctx<span class="token punctuation">.</span>header<span class="token punctuation">.</span>authorization<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token number">401</span>
+        <span class="token keyword">return</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// 获取token并且解析，判断token是否一致</span>
+      <span class="token keyword">const</span> authorization<span class="token punctuation">:</span> string <span class="token operator">=</span> ctx<span class="token punctuation">.</span>header<span class="token punctuation">.</span>authorization<span class="token punctuation">;</span>
+      <span class="token keyword">const</span> scheme <span class="token operator">=</span> authorization<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+      <span class="token keyword">const</span> credentials <span class="token operator">=</span> authorization<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>scheme <span class="token operator">!==</span> <span class="token string">'Bearer'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token number">401</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleResponse</span><span class="token punctuation">(</span><span class="token string">'authorization'</span><span class="token punctuation">,</span> ctx<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'Wrong authorization prefix'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>credentials<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token number">401</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleResponse</span><span class="token punctuation">(</span><span class="token string">'authorization'</span><span class="token punctuation">,</span> ctx<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'Request header authorization cannot be empty'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">const</span> token <span class="token operator">=</span> rsaUtil<span class="token punctuation">.</span><span class="token function">priDecrypt</span><span class="token punctuation">(</span><span class="token constant">RSA_PRIVATE_KEY</span><span class="token punctuation">,</span> credentials<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> token <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token number">401</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleResponse</span><span class="token punctuation">(</span><span class="token string">'authorization'</span><span class="token punctuation">,</span> ctx<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'authorization is not an object'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">const</span> isAuth <span class="token operator">=</span> <span class="token function">verify</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> <span class="token constant">JWTSECRET</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isAuth<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token number">401</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleResponse</span><span class="token punctuation">(</span><span class="token string">'authorization'</span><span class="token punctuation">,</span> ctx<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'authorization token expired'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">const</span> decoded<span class="token punctuation">:</span> string <span class="token operator">|</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>key<span class="token punctuation">:</span> string<span class="token punctuation">]</span><span class="token punctuation">:</span> any <span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token function">decode</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> decoded <span class="token operator">!==</span> <span class="token string">'object'</span> <span class="token operator">||</span> <span class="token operator">!</span>decoded<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token number">401</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleResponse</span><span class="token punctuation">(</span><span class="token string">'authorization'</span><span class="token punctuation">,</span> ctx<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'authorization parsing failed'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">const</span> noncestr <span class="token operator">=</span> decoded<span class="token punctuation">.</span>noncestr
+      <span class="token keyword">const</span> exp <span class="token operator">=</span> decoded<span class="token punctuation">.</span>exp
+      <span class="token keyword">const</span> iss <span class="token operator">=</span> decoded<span class="token punctuation">.</span>iss
+      <span class="token keyword">const</span> cacheNoncestr <span class="token operator">=</span> cacheUtil<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>iss<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">IS_NONCESTR</span> <span class="token operator">&amp;&amp;</span> noncestr <span class="token operator">!==</span> cacheNoncestr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token number">401</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleResponse</span><span class="token punctuation">(</span><span class="token string">'authorization'</span><span class="token punctuation">,</span> ctx<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'authorization signature &quot;noncestr&quot; error'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">-</span> exp <span class="token operator">&lt;</span> <span class="token number">60</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span>decoded <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        Reflect<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token string">'exp'</span><span class="token punctuation">)</span>
+        Reflect<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token string">'iat'</span><span class="token punctuation">)</span>
+        Reflect<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token string">'nbf'</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> newToken <span class="token operator">=</span> <span class="token class-name">AController</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">jwtSign</span><span class="token punctuation">(</span>options <span class="token keyword">as</span> IPayload<span class="token punctuation">)</span>
+        ctx<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">,</span> newToken<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      ctx<span class="token punctuation">.</span>jwtData <span class="token operator">=</span> decoded
+      <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> AController
+<span class="token comment">//  授权装饰器代码</span>
+<span class="token keyword">public</span> <span class="token function">auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">:</span> any<span class="token punctuation">,</span> name<span class="token operator">?</span><span class="token punctuation">:</span> string<span class="token punctuation">,</span> descriptor<span class="token operator">?</span><span class="token punctuation">:</span> IDescriptor</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> target <span class="token operator">===</span> <span class="token string">'function'</span> <span class="token operator">&amp;&amp;</span> name <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span> descriptor <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      target<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>baseAuthMidws <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span>verifyAuthMiddleware<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> target <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> name <span class="token operator">&amp;&amp;</span> descriptor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      descriptor<span class="token punctuation">.</span>value<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>baseAuthMidws <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span>verifyAuthMiddleware<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样，我们就完成了一个jwt授权的模块了，我们用也很简单，以addAccLog接口为例</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">AccLogRoute</span> <span class="token punctuation">{</span>
+  @<span class="token function">auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 只要➕这一行代码就可以</span>
+  @<span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/addAccLog'</span><span class="token punctuation">)</span>
+ 	<span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="接口文档"><a href="#接口文档" aria-hidden="true" class="header-anchor">#</a> 接口文档</h3> <p>既然我们已经写好接口了，那总要有一份可参阅的文档输出，这时候就想到了swagger，接下来咱们就把swagger引入到我们的项目中吧。</p> <ul><li>入口</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// swagger入口</span>
+<span class="token keyword">import</span> swaggerJSDoc <span class="token keyword">from</span> <span class="token string">'swagger-jsdoc'</span>
+<span class="token keyword">import</span> config <span class="token keyword">from</span> <span class="token string">'../config'</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">OPEN_API_DOC</span> <span class="token punctuation">}</span> <span class="token operator">=</span> config
+<span class="token comment">// swagger definition</span>
+<span class="token keyword">const</span> swaggerDefinition <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> createDOC <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token parameter">object</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+    swaggerDefinition<span class="token punctuation">:</span> swaggerDefinition<span class="token punctuation">,</span>
+    apis<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'./src/controller/*.ts'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token constant">OPEN_API_DOC</span> <span class="token operator">?</span> <span class="token function">swaggerJSDoc</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> createDOC
+<span class="token comment">// 怎么</span>
+</code></pre></div><ul><li>配置示例 - 这边一定要注意格式</li></ul> <div class="language-json extra-class"><pre class="language-json"><code> @swagger Tips<span class="token operator">:</span> 必须要声明<span class="token punctuation">,</span>不然代码不会把此处生成为文档
+ definitions<span class="token operator">:</span>
+   Login<span class="token operator">:</span> <span class="token comment">// 接口名</span>
+     required<span class="token operator">:</span> <span class="token comment">// 必填参数</span>
+       - username
+       - password
+     properties<span class="token operator">:</span> <span class="token comment">// 可选参数</span>
+       username<span class="token operator">:</span>
+         type<span class="token operator">:</span> string
+       password<span class="token operator">:</span>
+         type<span class="token operator">:</span> string
+       path<span class="token operator">:</span>
+         type<span class="token operator">:</span> string
+
+</code></pre></div><ul><li><a href="https://editor.swagger.io/?_ga=2.216483614.98429752.1585213291-978523996.1584940904" target="_blank" rel="noopener noreferrer">swagger官方配置工具<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li>推荐一个vscode插件 - facility插件，用来快速生成注释</li></ul> <h3 id="mock数据"><a href="#mock数据" aria-hidden="true" class="header-anchor">#</a> Mock数据</h3> <p>使用mock来生成测试数据</p> <h3 id="日志"><a href="#日志" aria-hidden="true" class="header-anchor">#</a> 日志</h3> <p>日志模块本来打算是用log4.js来做的，后来感觉做的日志模块还没达到预期，所以就决定先暂时用pm2的日志系统来代替log4。这边就先不贴log4相关的代码了</p> <h3 id="部署"><a href="#部署" aria-hidden="true" class="header-anchor">#</a> 部署</h3> <p>使用pm2来部署项目,这边展示一下配置文件</p> <p>Tips</p> <ul><li>error_file 错误日志输出</li> <li>out_file 正常日志输出</li> <li>script 入口文件 - 以打包过后的js文件作为入口</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// pm2.json</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;apps&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;xxx&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;script&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;./app/server.js&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cwd&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;./&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;args&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;interpreter_args&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;watch&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;ignore_watch&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;node_modules&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;logs&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;app/lib&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;exec_mode&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;fork_mode&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;instances&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;max_memory_restart&quot;</span><span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;error_file&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;./logs/pm2-err.log&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;out_file&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;./logs/pm2-out.log&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;merge_logs&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;log_date_format&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;YYYY-MM-DD HH:mm:ss&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;max_restarts&quot;</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;autorestart&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cron_restart&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;restart_delay&quot;</span><span class="token punctuation">:</span> <span class="token number">60</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;env&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;NODE_ENV&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;production&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// package.json</span>
+<span class="token string">&quot;scripts&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 生产环</span>
+  <span class="token string">&quot;prod&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;pm2 start pm2.json&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>配置好pm2之后，我们只要在package.json中配置<code>pm2 start pm2.json</code>就可以实现启动pm2进程了</p> <h2 id="结束语"><a href="#结束语" aria-hidden="true" class="header-anchor">#</a> 结束语</h2> <p>虽然是一个简单的接口服务器，但是需要考虑的东西也是很多，而且因为很多插件都是第一次接触，所以整个项目实现的过程还是蛮坎坷的，基本上是那种摸石头过河。不过痛并快乐着吧，虽然困难很多，但是过程中也学到了不少新的知识点，大概了解了一个简单的后端服务项目所承载的重量。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2020/5/6 下午8:29:19</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/frontEnd/typescript/generic.html" class="prev">
+          TS泛型积累
+        </a></span> <span class="next"><a href="/frontEnd/react/hook-in-project.html">
+          React Hook在项目
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.7355eab2.js" defer></script><script src="/assets/js/2.132a57af.js" defer></script><script src="/assets/js/16.dd06d4f0.js" defer></script>
+  </body>
+</html>
